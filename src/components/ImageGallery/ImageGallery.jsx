@@ -4,7 +4,7 @@ import {fetchImages} from '../../services/fetch';
 import {ImageGalleryItem} from '../ImageGalleryItem/ImageGalleryItem';
 import {Button} from '../Button/Button';
 import {ThreeDots} from '../Loader/Loader';
-import {Modal} from '../Modal/Modal'
+import {Modal} from '../Modal/Modal';
 
 export class ImageGallery extends Component {
   state = {
@@ -65,16 +65,28 @@ export class ImageGallery extends Component {
     const checkLoadMore = images.length > 0;
     return (
       <>
+        {!checkLoadMore && <div style={{
+          display: 'flex',
+          justifyContent: 'center'
+          }}>
+
+          <p className={css.block}>Your pictures were not found. Try again!</p>
+          
+          </div>
+        }
+
         {showModal && <Modal onClose = {this.toggleModal} >
           <img src={largeImageURL} alt=''/>
-          </Modal>}
+          </Modal>
+        }
+
         {
           images && (
           <>
           <ul className={css.imageGallery}>
           <ImageGalleryItem images={images} getLargeImg={this.getLargeImg}/>
           </ul>
-          {checkLoadMore && <Button onClick={this.getImages}/>  }
+          {checkLoadMore && <Button onClick={this.getImages}/> }
           <div className={css.loader}>
             {isLoading && <ThreeDots /> }
           </div>
