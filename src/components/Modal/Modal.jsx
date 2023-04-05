@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import css from './Modal.module.css';
+import propTypes from 'prop-types';
 
 export class Modal extends Component {
 
@@ -33,3 +34,7 @@ export class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  children: propTypes.node,
+};

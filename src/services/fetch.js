@@ -8,7 +8,7 @@ export function fetchImages(searchValue, page) {
     image_type:"photo",
     orientation: "horizontal",
     page: page,
-    per_page: 3
+    per_page: 12
   });
 
   return fetch((`${BASE_URL}?${searchParams}`)).then(response => {

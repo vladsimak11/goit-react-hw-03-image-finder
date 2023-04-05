@@ -16,9 +16,18 @@ export class ImageGallery extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if(prevProps.searchValue !== this.props.searchValue && this.props.searchValue) {
+    const {searchValue} = this.props;
+    prevState.currentPage = 1;
+    if(prevProps.searchValue !== searchValue && searchValue) {
+      
+      this.setState({
+        images: [],
+        currentPage: 1,
+      });
+
       this.getImages();
     } 
+
   }
 
   getImages = () => {

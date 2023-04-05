@@ -1,4 +1,5 @@
 import css from './ImageGalleryItem.module.css';
+import propTypes from 'prop-types';
 
 export const ImageGalleryItem = ({images, getLargeImg}) => {
   return (
@@ -10,4 +11,13 @@ export const ImageGalleryItem = ({images, getLargeImg}) => {
       )
     }) 
   )
+}
+
+ImageGalleryItem.propTypes = {
+  images: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.number.isRequired,
+    }),
+  ),
+  getLargeImg:propTypes.func.isRequired,
 }

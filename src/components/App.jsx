@@ -9,11 +9,13 @@ export class App extends Component {
   }
 
   createSearchValue = (getValueQuery) => {
-    this.setState({getValueQuery}
-    );
+    this.setState({
+      getValueQuery: getValueQuery,
+      });
   }
 
   render() {
+
     return (
       <div className={css.app}>
         <Searchbar createSearchValue={this.createSearchValue} />
