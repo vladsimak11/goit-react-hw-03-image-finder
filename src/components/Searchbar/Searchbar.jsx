@@ -15,7 +15,13 @@ export class Searchbar extends Component {
   handleSumbit = (e) => {
     e.preventDefault();
     this.props.createSearchValue(this.state.valueQuery);
+    this.resetForm();
   }
+
+  resetForm = () =>
+    this.setState({
+      valueQuery: '',
+    });
 
   render() {
     return (

@@ -10,14 +10,14 @@ export class App extends Component {
 
   createSearchValue = (getValueQuery) => {
     this.setState({getValueQuery}
-      );
+    );
   }
 
   render() {
     return (
       <div className={css.app}>
         <Searchbar createSearchValue={this.createSearchValue} />
-        <ImageGallery searchValue={this.state.getValueQuery}/>
+        <ImageGallery searchValue={this.state.getValueQuery} />
       </div>
     );
   }

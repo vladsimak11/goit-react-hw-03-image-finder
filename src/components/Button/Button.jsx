@@ -1,8 +1,8 @@
 import css from './Button.module.css';
 
-export const Button = ({loadMore}) => {
+export const Button = ({ onClick }) => {
   return (
-    <button type="submit" className={css.button} onClick = {() =>  loadMore()}>
+    <button type="submit" className={css.button} onClick = {onClick}>
         Load more
     </button>
   )
