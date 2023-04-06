@@ -70,7 +70,7 @@ export class ImageGallery extends Component {
           justifyContent: 'center'
           }}>
 
-          <p className={css.block}>Your pictures were not found. Try again!</p>
+          <p className={css.block}>The gallery is empty. <br /> Enter the value in the search field!</p>
           
           </div>
         }
